@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Reckless';
+    font-style: normal;
+    font-weight: 300;
+    src: url('fonts/Reckless-Light.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Reckless';
+    font-style: italic;
+    font-weight: 300;
+    src: url('fonts/Reckless-LightItalic.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Reckless';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/Reckless-Regular.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Reckless';
+    font-style: italic;
+    font-weight: 400;
+    src: url('fonts/Reckless-RegularItalic.woff') format('woff');
+  }
+  
+  /* Wallop fonts */
+  @font-face {
+    font-family: 'Wallop';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/Wallop-Regular.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Wallop';
+    font-style: italic;
+    font-weight: 400;
+    src: url('fonts/Wallop-RegularItalic.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Wallop';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/Wallop-SemiBold.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Wallop';
+    font-style: italic;
+    font-weight: 700;
+    src: url('fonts/Wallop-SemiBoldItalic.woff') format('woff');
+  }

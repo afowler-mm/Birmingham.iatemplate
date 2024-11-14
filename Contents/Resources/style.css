@@ -1,0 +1,33 @@
+@import url("normalize.css");
+@import url("core.css");
+@import url("fonts.css");
+
+/* Based on the iA Writer Helvetica template: https://ia.net/downloads#templates */
+/* Customized for Made Media by @ashuttl */
+
+
+/* TYPOGRAPHY */
+
+:root {
+    --wallop: "Wallop", sans-serif;
+    --wallop-settings: "liga";
+    --reckless: "Reckless", serif;
+    --reckless-settings: "ss04" 1, "liga" 1, "clig" 1, "onum";
+}
+
+body {
+    font-family: var(--reckless);
+    font-feature-settings: var(--reckless-settings);
+}
+
+td {
+    font-feature-settings: "tnum";
+}
+
+.madelogo {
+    font-family: var(--wallop);
+    font-weight: bolder;
+    font-feature-settings: 'ss01' 1;
+    letter-spacing: -.05em;
+    font-size: 1.4em;
+}
