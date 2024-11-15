@@ -170,7 +170,7 @@ body {
 }
 
 body > *:first-child {
-   margin-top: 0;
+   /* margin-top: 0; */
 }
 
 /* iOS gutters responsive adjustments */
@@ -255,7 +255,7 @@ body {
 /* Headings */
 
 body > h1:first-child {
-  margin-top: 0; /* Controlled via body padding-top */
+  /* margin-top: 0; Controlled via body padding-top */
 }
 
 /* Unify space above initial heading in blockquotes (based on 31px line-height) */
@@ -484,7 +484,7 @@ kbd {
   *,
   *:before,
   *:after {
-    color: #000 !important; /* black prints faster */
+    /* color: #000 !important; black prints faster */
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -503,7 +503,7 @@ kbd {
 
   /* Make sure there’s no margin-top on first element */
   body > :first-child {
-    margin-top: 0;
+    /* margin-top: 0; */
   }
 
   /* h6 excluded as the page-break-inside rule conflicts with page-initial inline h6 when printed */
