@@ -123,6 +123,12 @@ body>table {
         font-size: 1.5em;
         font-weight: bold;
     }
+
+    h2, h3, h4, h5 {
+        margin-top: 0;
+        line-height: 1;
+        font-size: 1.5em;
+    }
 }
 
 td[data-requirement="standard"] {
