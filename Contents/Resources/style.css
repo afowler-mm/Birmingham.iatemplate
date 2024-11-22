@@ -12,7 +12,7 @@
     --wallop-settings: "liga";
     --reckless: "Reckless", serif;
     --reckless-settings: "ss04" 1, "liga" 1, "clig" 1;
-    --base-headline-size: 2rem;
+    --base-headline-size: 1.8rem;
     --offblack: #101010;
     --offwhite: #dedede;
 }
@@ -23,7 +23,7 @@ body {
 }
 
 html {
-    font-size: 0.9em;
+    font-size: 0.8em;
 
     &:has(.title) {
         padding-top: 0;
@@ -98,12 +98,6 @@ li:first-child {
     margin-top: 0.5em;
 }
 
-table {
-    font-size: 0.8em;
-    border-collapse: collapse;
-    width: 100%;
-}
-
 /* BASIC LAYOUT */
 
 body {
@@ -117,6 +111,12 @@ body {
 }
 
 /* TABLES */
+
+table {
+    font-size: 0.8em;
+    border-collapse: collapse;
+    width: 100%;
+}
 
 body>table {
     table-layout: unset;
@@ -172,13 +172,15 @@ td[data-requirement="custom"] {
 table#team {
     font-size: 0.7em;
     line-height: 1.4;
+    border-bottom: none;
 
     caption {
         display: none;
     }
 
     img {
-        max-width: .75in;
+        max-width: 0.70in;
+        min-width: 0.65in;
     }
 }
 
@@ -192,10 +194,6 @@ figure {
         border-bottom: 0.5px solid #dedede;
         /* margin-top: -2em; */
         float: right;
-
-        img {
-            width: 100%;
-        }
     }
 
     figcaption {
@@ -210,6 +208,7 @@ figure {
 /* IMAGES */
 
 img {
+    width: 100%;
     object-fit: cover;
 }
 
@@ -349,4 +348,12 @@ div.TOC {
 hr {
     border: 0;
     border-top: 1px solid #dedede;
+}
+
+.container {
+    font-size: 0.9em;
+    line-height: 1.4;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;\
 }
