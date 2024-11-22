@@ -324,9 +324,19 @@ blockquote {
     clear: both;
 }
 
+@media screen {
+    div.TOC .page-number {
+        display: none;
+    }
+}
+
 div.TOC {
     font-size: 0.8em;
     margin-bottom: 4em;
+
+    .page-number {
+        float: right;
+    }
 
     ul {
         list-style-type: none;

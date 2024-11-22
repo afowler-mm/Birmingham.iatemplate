@@ -1,8 +1,10 @@
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     processRequirementsTable();
-    document.body.addEventListener('ia-writer-change', function() {
+    document.body.addEventListener('ia-writer-change', function () {
         processRequirementsTable();
+        processTOCLinks();
     });
+    processTOCLinks();
 });
 
 function processRequirementsTable() {
@@ -47,6 +49,39 @@ function processRequirementsTable() {
                 }
             });
         }
+    });
+}
 
+function processTOCLinks() {
+    const links = document.querySelectorAll('.TOC > ul > li > a'); // Ensure we are only selecting top-level TOC links
+    const pageHeight = 950; // Assuming 11 inches at 72 DPI
+
+    links.forEach((link) => {
+        // Avoid processing links without a valid href pointing to an anchor
+        const targetId = link.getAttribute('href')?.substring(1);
+        if (!targetId) return;
+
+        // Ensure the target exists in the document
+        const target = document.getElementById(targetId);
+        if (!target) {
+            console.warn(`No target found for link to ${targetId}`);
+            return;
+        }
+
+        // Calculate the page number of the target
+        const rect = target.getBoundingClientRect();
+        const pageNumber = Math.floor(rect.top / pageHeight) + 1;
+
+        // Check for an existing page number span and update if necessary
+        let pageNumberElement = link.querySelector('.page-number');
+        if (!pageNumberElement) {
+            // Create a new span if it doesn't exist
+            pageNumberElement = document.createElement('span');
+            pageNumberElement.classList.add('page-number'); // Add a class for styling
+            link.appendChild(pageNumberElement);
+        }
+
+        // Update the span's content to reflect the calculated page number
+        pageNumberElement.textContent = `${pageNumber}`;
     });
 }
