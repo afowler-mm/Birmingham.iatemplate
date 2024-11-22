@@ -30,6 +30,12 @@ html {
     }
 }
 
+@media screen {
+    html {
+        font-size: 1em;
+    }
+}
+
 h1,
 h2,
 h3,
@@ -124,10 +130,14 @@ body>table {
         font-weight: bold;
     }
 
-    h2, h3, h4, h5 {
+    h2,
+    h3,
+    h4,
+    h5 {
         margin-top: 0;
         line-height: 1;
         font-size: 1.5em;
+        margin-bottom: 0;
     }
 }
 
@@ -135,251 +145,7 @@ td[data-requirement="standard"] {
     font-weight: bold;
     color: green;
 }
-td[data-requirement="custom"] {
-    font-weight: bold;
-    color: purple;
-}
 
-
-@media print {
-    table#requirements {
-        margin-left: -2em;
-        margin-right: -2em;
-        width: calc(100% + 4em);
-    }
-}
-
-@media screen {
-    table#requirements {
-        margin-top: 3em !important;
-        width: 98vw;
-        margin: auto;
-        margin-left: calc(-49vw + 50%);
-    }
-}
-
-/* IMAGES */
-
-figure {
-    &:not(:has(img[width="50%"])) {
-        margin: 0 -4rem;
-    }
-
-    &:has(img[width="50%"]) {
-        width: 40%;
-        margin-top: -2em;
-        float: right;
-
-        img {
-            width: 100%;
-        }
-    }
-
-    figcaption {
-        font-size: 0.8em;
-        text-align: center;
-        opacity: 0.8;
-        line-height: 1.5em;
-        text-wrap: balance;
-    }
-}
-
-/* TITLE PAGE */
-
-.title {
-    background: var(--offblack);
-    color: var(--offwhite);
-    margin-bottom: 4em;
-
-    h1,
-    h2 {
-        color: white;
-    }
-
-    > * {
-        padding: 0 2rem;
-    }
-}
-
-@media screen {
-    .title {
-        width: 100vw;
-        height: 100vh;
-        margin-left: calc(-50vw + 50%);
-        margin-top: calc(var(--padding) * -1);
-    }
-}
-
-/* MISC STYLES */
-
-ul {
-    list-style-type: square;
-}
-
-.madelogo {
-    font-family: var(--wallop);
-    font-weight: bolder;
-    font-feature-settings: 'ss01' 1;
-    letter-spacing: -.05em;
-    font-size: 1.4em;
-}
-
-blockquote {
-    background-color: #dedede;
-    margin: 2em 0;
-    padding: 0.25em 2em;
-}
-
-div.TOC {
-    font-size: 0.8em;
-    margin-bottom: 4em;
-
-    ul {
-        list-style-type: none;
-    }
-
-    >ul {
-        padding-left: 0;
-
-        >li {
-            >a {
-                font-weight: bold;
-                font-size: 1.2em;
-            }
-        }
-
-    }
-}@import url("normalize.css");
-@import url("core.css");
-@import url("fonts.css");
-
-/* Using core styles from the iA Writer Helvetica template: https://ia.net/downloads#templates */
-/* Customized with these styles for Made Media by @ashuttl */
-
-/* TYPOGRAPHY */
-
-:root {
-    --wallop: "Wallop", sans-serif;
-    --wallop-settings: "liga";
-    --reckless: "Reckless", serif;
-    --reckless-settings: "ss04" 1, "liga" 1, "clig" 1;
-    --base-headline-size: 2rem;
-    --offblack: #101010;
-    --offwhite: #dedede;
-}
-
-body {
-    font-family: var(--wallop);
-    font-feature-settings: var(--wallop-settings);
-}
-
-html {
-    font-size: 0.9em;
-
-    &:has(.title) {
-        padding-top: 0;
-    }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: var(--reckless);
-    font-feature-settings: var(--reckless-settings);
-    font-weight: 400;
-    line-height: 1.2em;
-    letter-spacing: -.02em;
-    text-wrap: balance;
-    clear: both;
-    margin-bottom: 0.25em;
-
-    .night-mode & {
-        color: white;
-    }
-}
-
-h1 {
-    font-weight: 300;
-    font-size: calc(var(--base-headline-size) * 1.5);
-}
-
-h2 {
-    font-size: calc(var(--base-headline-size) * 1.25);
-}
-
-h3 {
-    font-size: calc(var(--base-headline-size) * 1);
-}
-
-h4 {
-    font-size: calc(var(--base-headline-size) * 0.9);
-}
-
-h5 {
-    font-size: calc(var(--base-headline-size) * 0.8);
-    font-weight: bold;
-    font-family: var(--wallop);
-    font-feature-settings: var(--wallop-settings);
-}
-
-p,
-li {
-    line-height: 1.5em;
-}
-
-:is(table, p, div, ul, ol)+ :is(h1, h2, h3, h4, h5, h6) {
-    margin-top: 2em;
-}
-
-:is(h1, h2, h3, h4, h5, h6)+ :is(h1, h2, h3, h4, h5, h6) {
-    margin-top: 0.5em;
-}
-
-li+li,
-li:first-child {
-    margin-top: 0.5em;
-}
-
-table {
-    font-size: 0.8em;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-/* BASIC LAYOUT */
-
-body {
-    max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.page-break {
-    clear: both;
-}
-
-/* TABLES */
-
-body>table {
-    table-layout: unset;
-
-    .tooltip:after {
-        display: none;
-    }
-
-    h2 {
-        font-size: 1.5em;
-        font-weight: bold;
-    }
-}
-
-td[data-requirement="standard"] {
-    font-weight: bold;
-    color: green;
-}
 td[data-requirement="custom"] {
     font-weight: bold;
     color: purple;
@@ -406,21 +172,25 @@ td[data-requirement="custom"] {
 table#team {
     font-size: 0.7em;
     line-height: 1.4;
+
     caption {
         display: none;
     }
+
+    img {
+        max-width: .75in;
+    }
 }
 
-/* IMAGES */
 
 figure {
-    &:not(:has(img[width="50%"])) {
-        margin: 0 -4rem;
+    td:has(img)+td {
+        padding-right: 2em;
     }
 
-    &:has(img[width="50%"]) {
-        width: 40%;
-        margin-top: -2em;
+    tr {
+        border-bottom: 0.5px solid #dedede;
+        /* margin-top: -2em; */
         float: right;
 
         img {
@@ -436,6 +206,38 @@ figure {
         text-wrap: balance;
     }
 }
+
+/* IMAGES */
+
+img {
+    object-fit: cover;
+}
+
+figure {
+    &:not(:has(img[width="50%"])) {
+        margin: 0 -4rem;
+    }
+
+    &:has(img[width="50%"]) {
+        width: 50%;
+        /* margin-top: -2em; */
+        float: right;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    figcaption {
+        font-size: 0.8em;
+        text-align: center;
+        opacity: 0.8;
+        line-height: 1.5em;
+        text-wrap: balance;
+    }
+}
+
+
 
 /* TITLE PAGE */
 
@@ -459,7 +261,7 @@ figure {
         line-height: 1;
     }
 
-    > * {
+    >* {
         padding: 0 2rem;
     }
 }
@@ -470,9 +272,9 @@ body.title {
 }
 
 @media screen {
-    div.title {
+    .title {
         width: 100vw;
-        height: 105vh;
+        height: 100vh;
         margin-left: calc(-50vw + 50%);
         margin-top: calc(var(--padding) * -1);
     }
@@ -487,12 +289,15 @@ body.title {
 
 /* HEADERS AND FOOTERS */
 
-body.header, body.footer {
+body.header,
+body.footer {
     font-size: 0.8em;
     opacity: .6;
+
     .label {
         float: left;
     }
+
     .page-numbers {
         float: right;
     }
@@ -517,6 +322,7 @@ blockquote {
     background-color: #dedede;
     margin: 2em 0;
     padding: 0.25em 2em;
+    clear: both;
 }
 
 div.TOC {
@@ -538,4 +344,9 @@ div.TOC {
         }
 
     }
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #dedede;
 }
